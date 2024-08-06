@@ -16,7 +16,6 @@ class TicketData(BaseModel):
     street: Optional[str] = None
     number: Optional[str] = None
     neighborhoodName: Optional[str] = None
-    domiciliary: Optional[str] = None
     deliveryPrice: Optional[str] = None
     observations: Optional[str] = None
     productsInSale: Optional[str] = None
@@ -158,12 +157,12 @@ async def printTicket(ticketData:TicketData):
         total += productInSale["total"]
     
 
-    if ticketData.saleType == "delivery":
-        ticketDelivery(ticketData,productsInSaleData,total)
-    elif ticketData.saleType == "eatHere":
-        ticketEatHere(ticketData,productsInSaleData,total)
-    elif ticketData.saleType == "pickUp":
-        ticketPickUp(ticketData,productsInSaleData,total)
+    # if ticketData.saleType == "delivery":
+    #     ticketDelivery(ticketData,productsInSaleData,total)
+    # elif ticketData.saleType == "eatHere":
+    #     ticketEatHere(ticketData,productsInSaleData,total)
+    # elif ticketData.saleType == "pickUp":
+    #     ticketPickUp(ticketData,productsInSaleData,total)
 
     return {"message": "Ticket printed successfully!"}
 
